@@ -396,6 +396,8 @@ GameObject:
   - component: {fileID: 1208329265}
   - component: {fileID: 1208329264}
   - component: {fileID: 1208329268}
+  - component: {fileID: 1208329269}
+  - component: {fileID: 1208329270}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -523,6 +525,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1208329269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208329263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fdd78cc1cf2c34dbe87e793a8c311b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HelloWorldDebug
+--- !u!114 &1208329270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208329263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68a2dabae8a801499858308a393f78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PushSpaceToDestroy
 --- !u!1001 &3364187662696970532
 PrefabInstance:
   m_ObjectHideFlags: 0
