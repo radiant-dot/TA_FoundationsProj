@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed25e5ab7d9c7a04d9f812e400a4ef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickToDestroy
-  clickObjToDestroy: {fileID: 0}
+  clickObjToDestroy: {fileID: 690783036}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
