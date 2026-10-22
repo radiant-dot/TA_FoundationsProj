@@ -42,6 +42,6 @@ public class CharacterMovement : MonoBehaviour
         {
             playerVelocity.y -= gravity;
         }
-        controller.Move(playerVelocity);
+        controller.Move(playerVelocity * Time.fixedDeltaTime);
     }
 }
