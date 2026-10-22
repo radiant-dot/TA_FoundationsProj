@@ -1,5 +1,6 @@
 using System.Numerics;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -15,6 +16,8 @@ public class CharacterMovement : MonoBehaviour
     CharacterController controller;
     private UnityEngine.Vector3 playerVelocity;
     public float gravity = 9.8f;
+    private UnityEngine.Vector2 horizontalMovement;
+    public float movementSpeed = 10f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,6 +41,13 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        horizontalMovement.x = Input.GetAxis("Horizontal") * movementSpeed;
+        horizontalMovement.y = Input.GetAxis("Vertical") * movementSpeed;
+        
+        //hi
+
+        horizontalMovement = UnityEngine.Vector3.forward
+
         if(controller.isGrounded == false)
         {
             playerVelocity.y -= gravity;

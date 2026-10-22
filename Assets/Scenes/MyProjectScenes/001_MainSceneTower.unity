@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   cam: {fileID: 2127946508}
   lookSpeed: 100
-  gravity: 4.2
+  gravity: 2.1
 --- !u!1 &843507219
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +770,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1495859295}
-  - {fileID: 843507223}
   - {fileID: 1862455315}
+  - {fileID: 843507223}
   - {fileID: 526660872}
