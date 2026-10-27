@@ -1,4 +1,4 @@
-using System.Numerics;
+
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -9,14 +9,14 @@ using UnityEngine.TextCore.Text;
 public class CharacterMovement : MonoBehaviour
 {
     public Camera cam;
-    private UnityEngine.Vector2 mouseMovement;
+    private Vector2 mouseMovement;
     private float xRotation;
     private float yRotation;
     public float lookSpeed;
     CharacterController controller;
-    private UnityEngine.Vector3 playerVelocity;
+    private Vector3 playerVelocity;
     public float gravity = 9.8f;
-    private UnityEngine.Vector2 horizontalMovement;
+    private Vector3 movementInput;
     public float movementSpeed = 10f;
 
 
@@ -30,28 +30,39 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mouseMovement = Input.mousePositionDelta;
-        xRotation -= mouseMovement.y * Time.deltaTime * lookSpeed;
-        xRotation = Mathf.Clamp(xRotation, -90, 90);
-        yRotation += mouseMovement.x  * Time.deltaTime * lookSpeed;
-        
-        transform.rotation = UnityEngine.Quaternion.Euler(0,yRotation,0);
-        cam.transform.localRotation = UnityEngine.Quaternion.Euler(xRotation,0,0);
+        mouseMovement = Input.mousePositionDelta; //get movement of mouse
+        movementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")); //get movement input based on axis input
+
+        MovePlayer();
+        MoveCamera();
     }
 
-    void FixedUpdate()
+    void MovePlayer()
     {
-        horizontalMovement.x = Input.GetAxis("Horizontal") * movementSpeed;
-        horizontalMovement.y = Input.GetAxis("Vertical") * movementSpeed;
+        Vector3 moveVector = transform.TransformDirection(movementInput); //convert movement from local to world transform
         
-        //hi
-
-        horizontalMovement = UnityEngine.Vector3.forward
-
-        if(controller.isGrounded == false)
+        if (controller.isGrounded) //push player into the ground if on ground
         {
-            playerVelocity.y -= gravity;
+            playerVelocity.y = -1f;
         }
-        controller.Move(playerVelocity * Time.fixedDeltaTime);
+        else //if not on ground, apply gravity
+        {
+            playerVelocity.y += gravity * -2f * Time.deltaTime;
+        }
+
+        controller.Move(moveVector * movementSpeed * Time.deltaTime); //apply movement input
+        controller.Move(playerVelocity * Time.deltaTime); //apply fall speed
+    }
+
+    void MoveCamera()
+    {
+        xRotation -= mouseMovement.y * Time.deltaTime * lookSpeed; //get vertical camera movement
+        xRotation = Mathf.Clamp(xRotation, -90, 90); //clamp to prevent player from looking too far up or down
+        yRotation += mouseMovement.x  * Time.deltaTime * lookSpeed; //get horizontal camera movement
+        
+        transform.rotation = Quaternion.Euler(0,yRotation,0); //apply horizontal rotation
+        cam.transform.localRotation = Quaternion.Euler(xRotation,0,0); //apply vertical rotation
     }
 }
+
+//code borrowed from https://github.com/D-three/First-Person-Movement-Script-For-Unity/blob/main/First_Person_Movement.cs
