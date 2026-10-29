@@ -51,7 +51,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         controller.Move(moveVector * movementSpeed * Time.deltaTime); //apply movement input
-        controller.Move(playerVelocity * Time.deltaTime); //apply fall speed
+        controller.Move(playerVelocity * Time.deltaTime); //apply fall speedd
     }
 
     void MoveCamera()
