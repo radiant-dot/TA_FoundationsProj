@@ -3,7 +3,52 @@ guid: c6a0ca2316a2a0247842340620c9d05c
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bannerblue
+    second: {fileID: 2100000, guid: 655dd57275949a04e9be04c00a327c31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bannergold
+    second: {fileID: 2100000, guid: 77aff59abfdc41646b882a25b7190d0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bannergrey
+    second: {fileID: 2100000, guid: c39dd141978f4814b9c84e94bfd36489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bone
+    second: {fileID: 2100000, guid: 493389113493f2f428032293968f70ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floormat
+    second: {fileID: 2100000, guid: bca4e592df6cf1b418038b6c10b8316e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: goldmat
+    second: {fileID: 2100000, guid: a34cb78192e88f84a92007acc7772d17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalmat
+    second: {fileID: 2100000, guid: 8a66c3185bd92c4448cc688e7c8a2501, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stonemat
+    second: {fileID: 2100000, guid: a0a611bfe1765da479e7957b20a6dc89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodmat
+    second: {fileID: 2100000, guid: 579590f840b6d1843bdb80c92a68b2eb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
