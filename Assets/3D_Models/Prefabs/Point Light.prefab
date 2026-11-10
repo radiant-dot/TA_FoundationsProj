@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2095774064545580665}
   - component: {fileID: 3317830645094598669}
   - component: {fileID: 1268429265448355190}
-  - component: {fileID: 3531495407251943895}
+  - component: {fileID: 1966546385728442553}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -128,25 +128,15 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!95 &3531495407251943895
-Animator:
-  serializedVersion: 7
+--- !u!114 &1966546385728442553
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426069243478905080}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a9e14f0068f4cb4f88ad3ccc8519605, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c7a258c7e874541b21eba54f07a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
