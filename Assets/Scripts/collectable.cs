@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class collectable : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class collectable : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("hi");
         transform.position = collector.transform.position;
         animator.SetTrigger("collected");
     }
