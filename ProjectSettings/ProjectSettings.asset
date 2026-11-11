@@ -928,10 +928,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: da036ba2-a3d0-4b1e-8891-759f2c02e23b
+  cloudProjectId: 2c923d43-f237-4ee9-9647-21bf096f2b42
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: TA_FoundationsProjReset
+  projectName: TA_FoundationsProj
   organizationId: radiantdot
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

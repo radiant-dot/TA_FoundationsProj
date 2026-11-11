@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class chestScript : MonoBehaviour
@@ -18,6 +19,7 @@ public class chestScript : MonoBehaviour
         {
             animator.SetTrigger("chestOpen");
             open = true;
+            gameObject.layer = 2;
         }
     }
 }
