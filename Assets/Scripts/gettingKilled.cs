@@ -15,11 +15,22 @@ public class gettingKilled : MonoBehaviour
         dragonScript = dragon.GetComponent<dragonBehaviour>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if(dragonScript.seesPlayer = true)
+        if (dragonScript.seesPlayer == true)
         {
-            dragonscript
+            fire.Play();
+            health -= 1;
+        }
+        else
+        {
+            fire.Stop();
+            health += 1;
+        }
+
+        if(health <= 0)
+        {
+
         }
     }
 }
