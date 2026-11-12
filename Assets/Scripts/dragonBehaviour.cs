@@ -9,9 +9,7 @@ public class dragonBehaviour : MonoBehaviour
     public GameObject dragon;
 
     public Animator animator;
-
     public ParticleSystem smoke;
-    public Collider collider;
     public GameObject player;
     public GameObject spotlight;
 
@@ -21,7 +19,8 @@ public class dragonBehaviour : MonoBehaviour
 
     public float viewDistance = 12;
 
-    RaycastHit hit;
+    public bool dragonCrazy = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,32 +33,54 @@ public class dragonBehaviour : MonoBehaviour
 
     private void Update()
     {
+        RaycastHit hit;
+
         Physics.Raycast(spotlight.transform.position, player.transform.position - spotlight.transform.position, out hit, viewDistance);
-        if (hit.collider.name == "player")
+        if (hit.collider != null)
         {
-            seesPlayer = true;
-            Debug.DrawRay(spotlight.transform.position, player.transform.position - spotlight.transform.position, Color.green);
+            if (hit.collider.name == "player")
+            {
+                seesPlayer = true;
+                //Debug.DrawRay(spotlight.transform.position, player.transform.position - spotlight.transform.position, Color.green);
+            }
+            else
+            {
+                seesPlayer = false;
+                //Debug.DrawRay(spotlight.transform.position, player.transform.position - spotlight.transform.position, Color.red);
+            }
         }
         else
         {
             seesPlayer = false;
-            Debug.DrawRay(spotlight.transform.position, player.transform.position - spotlight.transform.position, Color.red);
         }
+        
     }
 
     IEnumerator dragoncycle()
     {
         while (dragonSearch){
-            yield return StartCoroutine(wait(UnityEngine.Random.Range(5, 10)));
-
-            transform.eulerAngles = new Vector3(0, positions[UnityEngine.Random.Range(0, 2)], 0);
+            if (dragonCrazy == false)
+            {
+                yield return StartCoroutine(wait(UnityEngine.Random.Range(5, 10)));
+            }
+            
+            var randPos = positions[UnityEngine.Random.Range(1, 3)];
+            
+            transform.eulerAngles = new Vector3(0, randPos, 0);
             smoke.Play();
-            yield return StartCoroutine(wait(3));
+            if (dragonCrazy)
+            {
+                yield return StartCoroutine(wait(3));
+            }
+            else
+            {
+                yield return StartCoroutine(wait(1));
+            }
             animator.SetTrigger("appear");
             
             peeking = true;
-           
-
+            
+            
             yield return StartCoroutine(wait(5));
 
             peeking = false;

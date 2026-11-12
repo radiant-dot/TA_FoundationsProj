@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class collectable : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class collectable : MonoBehaviour
     public GameObject parent;
     public GameObject UIIcon;
     public GameObject player;
+    public RawImage scroll;
 
     float distance;
     public float interactRadius =2.5f;
     float lastDistance;
+
+    public string myName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +25,7 @@ public class collectable : MonoBehaviour
         animator = GetComponent<Animator>();
         parent = gameObject.transform.parent.gameObject;
         player = GameObject.Find("player");
+
     }
 
     private void Update()
@@ -40,6 +45,7 @@ public class collectable : MonoBehaviour
             parent.transform.position = collector.transform.position;
             GetComponent<Collider>().enabled = false;
             animator.SetTrigger("collected");
+            scroll.GetComponent<collectController>().Collect(myName);
         }
     }
 
