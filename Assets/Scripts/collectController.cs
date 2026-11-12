@@ -51,7 +51,5 @@ public class collectController : MonoBehaviour
                 wayOut.GetComponent<Collider>().enabled = false;
             }
         }
-
-        
     }
 }
